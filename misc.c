@@ -1,8 +1,10 @@
+#include <string.h>
+
 /*
    Functia ia ca paramentru o cifra ca si int, si returneaza caracterul
    care-i corespunde; daca cifra este intre 10 si 15, se va
    returna 'A', 'B' etc.
- */
+   */
 char	digToChar(int x)
 {
 	if (x < 10)
@@ -25,7 +27,7 @@ char	digToChar(int x)
 /*
    Functia ia ca parametru un caracter care reprezinta o cifra si returneaza
    cifra ca si int (de ex, daca cifra este 'F', functia returneaza 15)
-*/
+   */
 int		charToDig(char c)
 {
 	if (c >= '0' && c <= '9')
@@ -43,4 +45,20 @@ int		charToDig(char c)
 	else if (c == 'F')
 		return 15;
 	return 0;
+}
+
+int		min(int a, int b)
+{
+	if (a < b)
+		return (a);
+	else
+		return (b);
+}
+
+int		max(int a, int b)
+{
+	if (a >= b)
+		return (a);
+	else
+		return (b);
 }

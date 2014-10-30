@@ -5,7 +5,7 @@
 #include "conv.h"
 #include <string.h>
 
-char	*f_add(char* n1, char* n2, int base)
+char	*f_sub(char* n1, char* n2, int base)
 {
 	int		*n1_array;
 	int		*n2_array;
@@ -36,9 +36,15 @@ char	*f_add(char* n1, char* n2, int base)
 		n2_array[nbOfDigRez - nbOfDig2 + i] = charToDig(n2[i]);
 	for (i = nbOfDigRez - 1; i >= 0; i--)
 	{
-		rez[i] = digToChar((trans[i + 1] + n1_array[i] + n2_array[i])
-				% base);
-		trans[i] = (trans[i + 1] + n1_array[i] + n2_array[i]) / base;
+		if (trans[i + 1] + n1_array[i] - n2_array[i] >= 0)
+		{
+			rez[i] = digToChar(trans[i + 1] + n1_array[i] - n2_array[i]);
+		}
+		else
+		{
+			trans[i] = -1;
+			rez[i] = digToChar(base + trans[i + 1] + n1_array[i] - n2_array[i]);
+		}
 	}
 	while (rez[0] == '0' && strlen(rez) > 1)
 		rez++;
@@ -57,14 +63,15 @@ int		main()
 	n1 = malloc(1001);
 	n2 = malloc(1001);
 	printf("Author: Oancea Horatiu\n");
-	printf("Se va calcula suma a 2 numere intregi intr-o baza intre 2 si 16\n");
+	printf("Se va calcula diferenta a 2 numere intregi intr-o baza"); 
+	printf(" intre 2 si 16\n");
 	printf("Numarul 1:");
 	scanf("%s", n1);
 	printf("Numarul 2:");
 	scanf("%s", n2);
 	printf("Baza celor 2 numere:");
 	scanf("%d", &base);
-	printf("Suma dintre %s si %s este %s\n", n1, n2, f_add(n1, n2, base));
+	printf("Diferenta dintre %s si %s este %s\n", n1, n2, f_sub(n1, n2, base));
 	free(n1);
 	free(n2);
 	return (0);

@@ -38,7 +38,7 @@ char	*f_add(char* n1, char* n2, int base)
 				% base);
 		trans[i] = (trans[i + 1] + n1_array[i] + n2_array[i]) / base;
 	}
-	while (rez[0] == '0')
+	while (rez[0] == '0' && strlen(rez) > 1)
 		rez++;
 	free(n1_array);
 	free(n2_array);
@@ -48,5 +48,21 @@ char	*f_add(char* n1, char* n2, int base)
 
 int		main()
 {
-	printf("%s\n", f_add("1001", "11000", 2));
+	char	*n1;
+	char	*n2;
+	int		base;
+
+	n1 = malloc(1001);
+	n2 = malloc(1001);
+	printf("Se va calcula suma a 2 numere intregi intr-o baza intre 2 si 16\n");
+	printf("Numarul 1:");
+	scanf("%s", n1);
+	printf("Numarul 2:");
+	scanf("%s", n2);
+	printf("Baza celor 2 numere:");
+	scanf("%d", &base);
+	printf("Suma dintre %s si %s este %s\n", n1, n2, f_add(n1, n2, base));
+	free(n1);
+	free(n2);
+	return (0);
 }

@@ -1,10 +1,10 @@
 #include <string.h>
 
 /*
-   Functia ia ca paramentru o cifra ca si int, si returneaza caracterul
-   care-i corespunde; daca cifra este intre 10 si 15, se va
-   returna 'A', 'B' etc.
-   */
+ * Functia ia ca paramentru o cifra ca si int, si returneaza caracterul
+ * care-i corespunde; daca cifra este intre 10 si 15, se va
+ * returna 'A', 'B' etc.
+ */
 char	digToChar(int x)
 {
 	if (x < 10)
@@ -47,6 +47,9 @@ int		charToDig(char c)
 	return 0;
 }
 
+/*
+ * Functia returneaza minimul dintre numerele intregi a si b
+*/
 int		min(int a, int b)
 {
 	if (a < b)
@@ -55,6 +58,9 @@ int		min(int a, int b)
 		return (b);
 }
 
+/*
+ * Functia returneaza maximul dintre numerele intregi a si b
+*/
 int		max(int a, int b)
 {
 	if (a >= b)

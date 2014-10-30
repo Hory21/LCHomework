@@ -1,11 +1,21 @@
 // author: Oancea Horatiu
 
-#include <stdio.h>
 #include <stdlib.h>
 #include "conv.h"
 #include <string.h>
 
 char	*f_div(char* n1, char n2, int base, int* rem)
+	/*
+	 * Functia calculeaza catul si restul impartirii lui n1 la n2
+	 * param:
+	 * n1: numar natural, sub forma de string
+	 * n2: numar natural, format dintr-o cifra
+	 * base: baza in care sunt reprezentate numerele
+	 * 2 <= base <= 16
+	 * rem: adresa la care se pune restul impartirii
+	 * returns:
+	 * catul impartirii lui n1 la n2
+	*/
 {
 	int		*n1_array;
 	int		n2_int;
@@ -44,7 +54,7 @@ char	*f_div(char* n1, char n2, int base, int* rem)
 	return (rez);
 }
 
-int		main()
+/*int		main()
 {
 	char	*n1;
 	char	n2;
@@ -67,4 +77,4 @@ int		main()
 	printf("Restul impartirii lui %s la %c este %c\n", n1, n2, digToChar(rem));
 	free(n1);
 	return (0);
-}
+}*/

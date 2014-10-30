@@ -1,11 +1,18 @@
 // author: Oancea Horatiu
 
-#include <stdio.h>
 #include <stdlib.h>
 #include "conv.h"
 #include <string.h>
 
 char	*f_add(char* n1, char* n2, int base)
+	/*
+	 * Functia aduna 2 numere reprezentate in baza base
+	 * param:
+	 * n1, n2: stringuri care reprezinta numere naturale
+	 * base: baza in care se afla numerele (2 <= base <= 16)
+	 * returns:
+	 * un string care reprezinta rezultatul adunarii dintre cele doua numere
+	*/
 {
 	int		*n1_array;
 	int		*n2_array;
@@ -48,7 +55,7 @@ char	*f_add(char* n1, char* n2, int base)
 	return (rez);
 }
 
-int		main()
+/*int		main()
 {
 	char	*n1;
 	char	*n2;
@@ -68,4 +75,4 @@ int		main()
 	free(n1);
 	free(n2);
 	return (0);
-}
+}*/

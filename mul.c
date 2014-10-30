@@ -1,11 +1,19 @@
 // author: Oancea Horatiu
 
-#include <stdio.h>
 #include <stdlib.h>
 #include "conv.h"
 #include <string.h>
 
 char	*f_mul(char* n1, char n2, int base)
+	/*
+	 * Functia inmulteste 2 numere naturale
+	 * param:
+	 * n1, n2: stringuri care reprezinta numere naturale
+	 * n2 este numar format dintr-o singura cifra
+	 * base: baza in care sunt reprezentate cele 2 numere
+	 * returns:
+	 * produsul celor 2 numere, sub forma de string
+	*/
 {
 	int		*n1_array;
 	int		n2_int;
@@ -42,7 +50,7 @@ char	*f_mul(char* n1, char n2, int base)
 	return (rez);
 }
 
-int		main()
+/*int		main()
 {
 	char	*n1;
 	char	n2;
@@ -62,4 +70,4 @@ int		main()
 	printf("Produsul dintre %s si %c este %s\n", n1, n2, f_mul(n1, n2, base));
 	free(n1);
 	return (0);
-}
+}*/
